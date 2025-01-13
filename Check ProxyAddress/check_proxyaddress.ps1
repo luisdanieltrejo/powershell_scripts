@@ -1,8 +1,8 @@
 # Solicitar el nombre del usuario de Active Directory
-$UserName = Read-Host "Ingrese el nombre del usuario de Active Directory (SAMAccountName): "
+Write-Host "Ingrese el nombre del usuario de Active Directory " -ForegroundColor DarkRed -NoNewline; Write-Host "(en formato SAMACCOUNTNAME o nombre de NETBIOS)" -ForegroundColor DarkGray -NoNewline; Write-Host ":" -ForegroundColor DarkRed -NoNewline; $UserName = Read-Host
 
 # Solicitar la dirección de correo electrónico
-$EmailToCheck = Read-Host "Ingrese la dirección de correo electrónico que desea verificar: "
+$EmailToCheck = $(Write-Host "Desea habilitar el reenvio de correos? " -ForegroundColor DARKRED -NoNewLine)
 
 # Obtener el usuario de Active Directory
 $User = Get-ADUser -Identity $UserName -Property proxyAddresses
